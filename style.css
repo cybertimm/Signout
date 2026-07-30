@@ -1,0 +1,440 @@
+
+/* ==========================================================
+   Graduation Tribute Website
+   style.css
+   Premium Romantic Theme
+   ========================================================== */
+
+:root{
+  --bg:#FFF9F5;
+  --card:rgba(255,255,255,.38);
+  --text:#3d3d3d;
+  --pink:#FFD8E8;
+  --rose:#D48C8C;
+  --shadow:0 20px 40px rgba(0,0,0,.08);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(-45deg,#fff9f5,#ffeef5,#fff7ef,#ffe4ef);
+  background-size:400% 400%;
+  animation:bgMove 18s ease infinite;
+  color:var(--text);
+  overflow-x:hidden;
+}
+
+@keyframes bgMove{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
+
+.gradient{
+position:fixed;
+inset:0;
+pointer-events:none;
+background:
+radial-gradient(circle at top right,rgba(255,184,210,.35),transparent 35%),
+radial-gradient(circle at bottom left,rgba(212,140,140,.25),transparent 35%);
+z-index:-2;
+}
+
+#particles{
+position:fixed;
+inset:0;
+pointer-events:none;
+z-index:-1;
+background-image:
+radial-gradient(circle,rgba(255,255,255,.6) 1px,transparent 1px);
+background-size:70px 70px;
+opacity:.35;
+animation:floatBg 35s linear infinite;
+}
+
+@keyframes floatBg{
+from{transform:translateY(0)}
+to{transform:translateY(-70px)}
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:40px;
+text-align:center;
+}
+
+.hero-content{
+max-width:900px;
+padding:60px;
+border-radius:30px;
+background:var(--card);
+backdrop-filter:blur(18px);
+box-shadow:var(--shadow);
+}
+
+.subtitle{
+font-family:'Dancing Script',cursive;
+font-size:2rem;
+color:var(--rose);
+margin-bottom:15px;
+}
+
+.hero h1{
+font-size:4rem;
+margin-bottom:10px;
+}
+
+.hero h2{
+font-family:'Playfair Display',serif;
+font-size:3.2rem;
+line-height:1.2;
+margin-bottom:25px;
+}
+
+.hero p{
+font-size:1.15rem;
+max-width:650px;
+margin:auto;
+line-height:1.8;
+transition:.4s;
+}
+
+.btn{
+display:inline-block;
+margin-top:40px;
+padding:16px 38px;
+background:linear-gradient(135deg,var(--rose),var(--pink));
+color:white;
+text-decoration:none;
+border-radius:999px;
+font-weight:600;
+position:relative;
+overflow:hidden;
+transition:.35s;
+box-shadow:0 15px 30px rgba(212,140,140,.25);
+}
+
+.btn:hover{
+transform:translateY(-5px);
+box-shadow:0 25px 45px rgba(212,140,140,.35);
+}
+
+.ripple{
+position:absolute;
+width:12px;
+height:12px;
+background:white;
+border-radius:50%;
+transform:translate(-50%,-50%);
+animation:ripple .6s linear;
+}
+
+@keyframes ripple{
+to{
+transform:translate(-50%,-50%) scale(25);
+opacity:0;
+}
+}
+
+.container{
+width:min(900px,92%);
+margin:auto;
+}
+
+.section-title{
+font-family:'Playfair Display',serif;
+font-size:3rem;
+text-align:center;
+margin-bottom:60px;
+}
+
+.letter{
+padding:100px 0;
+}
+
+.paragraph{
+background:var(--card);
+backdrop-filter:blur(15px);
+padding:35px;
+border-radius:24px;
+box-shadow:var(--shadow);
+margin-bottom:35px;
+line-height:2;
+font-size:1.08rem;
+}
+
+.quote{
+margin:70px 0;
+padding:60px 40px;
+text-align:center;
+border-radius:30px;
+background:linear-gradient(135deg,#fff,#ffe8f1);
+box-shadow:var(--shadow);
+}
+
+.quote h2{
+font-family:'Dancing Script',cursive;
+font-size:3rem;
+color:var(--rose);
+line-height:1.4;
+}
+
+.timeline{
+padding:100px 8%;
+}
+
+.timeline-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:25px;
+}
+
+.timeline-item{
+background:var(--card);
+padding:35px 20px;
+text-align:center;
+border-radius:24px;
+box-shadow:var(--shadow);
+transition:.35s;
+font-size:1.1rem;
+}
+
+.timeline-item:hover{
+transform:translateY(-10px) scale(1.03);
+}
+
+.timeline-item h3{
+margin:20px 0 10px;
+font-family:'Playfair Display',serif;
+}
+
+.gallery{
+padding:100px 8%;
+}
+
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+height:320px;
+object-fit:cover;
+border-radius:22px;
+cursor:pointer;
+transition:.45s;
+box-shadow:var(--shadow);
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+.lightbox{
+position:fixed;
+inset:0;
+display:none;
+justify-content:center;
+align-items:center;
+background:rgba(0,0,0,.85);
+z-index:999;
+}
+
+.lightbox.show{
+display:flex;
+}
+
+.lightbox img{
+max-width:90%;
+max-height:90%;
+border-radius:18px;
+}
+
+.close-lightbox{
+position:absolute;
+top:30px;
+right:40px;
+color:white;
+font-size:3rem;
+cursor:pointer;
+}
+
+.video-section{
+padding:100px 8%;
+text-align:center;
+}
+
+.video-section video{
+width:min(900px,100%);
+border-radius:24px;
+box-shadow:var(--shadow);
+}
+
+.ending{
+padding:140px 20px;
+text-align:center;
+}
+
+.ending h1{
+font-family:'Playfair Display',serif;
+font-size:4rem;
+margin-bottom:25px;
+}
+
+.ending p{
+max-width:700px;
+margin:auto;
+line-height:2;
+font-size:1.2rem;
+}
+
+.ending h2{
+font-family:'Dancing Script',cursive;
+font-size:4rem;
+margin-top:50px;
+color:var(--rose);
+}
+
+footer{
+padding:40px;
+text-align:center;
+font-size:1rem;
+opacity:.75;
+}
+
+.reveal{
+opacity:0;
+transform:translateY(60px);
+transition:1s;
+}
+
+.reveal.active{
+opacity:1;
+transform:none;
+}
+
+.progress-bar{
+position:fixed;
+top:0;
+left:0;
+height:5px;
+width:0;
+background:linear-gradient(to right,var(--rose),var(--pink));
+z-index:9999;
+}
+
+.backToTop{
+position:fixed;
+bottom:35px;
+right:35px;
+width:55px;
+height:55px;
+border:none;
+border-radius:50%;
+background:var(--rose);
+color:white;
+font-size:1.5rem;
+cursor:pointer;
+opacity:0;
+transform:translateY(30px);
+transition:.35s;
+box-shadow:var(--shadow);
+}
+
+.backToTop.show{
+opacity:1;
+transform:none;
+}
+
+.floating-heart,
+.sparkle,
+.confetti{
+position:fixed;
+pointer-events:none;
+z-index:999;
+}
+
+.floating-heart{
+bottom:-40px;
+animation:heartFloat linear forwards;
+}
+
+@keyframes heartFloat{
+to{
+transform:translateY(-120vh) rotate(360deg);
+opacity:0;
+}
+}
+
+.sparkle{
+animation:spark 2.5s ease forwards;
+}
+
+@keyframes spark{
+0%{opacity:0;transform:scale(.2)}
+40%{opacity:1}
+100%{opacity:0;transform:scale(1.4)}
+}
+
+.confetti{
+width:10px;
+height:18px;
+top:-20px;
+animation:fall linear forwards;
+}
+
+@keyframes fall{
+to{
+transform:translateY(110vh) rotate(720deg);
+}
+}
+
+@media(max-width:768px){
+
+.hero-content{
+padding:35px 25px;
+}
+
+.hero h2{
+font-size:2.2rem;
+}
+
+.hero h1{
+font-size:3rem;
+}
+
+.section-title{
+font-size:2.2rem;
+}
+
+.quote h2{
+font-size:2.2rem;
+}
+
+.ending h1{
+font-size:2.6rem;
+}
+
+.ending h2{
+font-size:3rem;
+}
+
+.paragraph{
+padding:25px;
+}
+
+.gallery img{
+height:240px;
+}
+
+}
